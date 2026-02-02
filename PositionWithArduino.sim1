@@ -80,7 +80,7 @@
 
 <item itemtype="Resistor" CircId="Resistor-372" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-304,-448" rotation="0" hflip="1" vflip="1" label="Resistor-372" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="10 kΩ" />
 
-<item itemtype="WaveGen" CircId="WaveGen-429" mainComp="false" Show_id="true" Show_Val="false" Pos="-596,-732" rotation="0" hflip="1" vflip="1" label="Exclusive Right IN" idLabPos="-12.2497,-31.1549" labelrot="360" valLabPos="-16,8" valLabRot="0" Out="true" Running="true" Wave_Type="Sine" Freq="5 kHz" Phase="0 _º" Steps="100 _Steps" Duty="50 _%" Always_On="true" Bipolar="false" Floating="false" Semi_Ampli="1 V" Mid_Volt="0 V" />
+<item itemtype="WaveGen" CircId="WaveGen-429" mainComp="false" Show_id="true" Show_Val="false" Pos="-596,-732" rotation="0" hflip="1" vflip="1" label="Exclusive Right IN" idLabPos="-12.2497,-31.1549" labelrot="360" valLabPos="-16,8" valLabRot="0" Out="true" Running="true" Wave_Type="Sine" Freq="5 kHz" Phase="0 _º" Steps="100 _Steps" Duty="50 _%" Always_On="true" Bipolar="false" Floating="false" Semi_Ampli="3 V" Mid_Volt="0 V" />
 
 <item itemtype="Resistor" CircId="Resistor-583" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-628,48" rotation="90" hflip="1" vflip="1" label="Resistor-583" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 kΩ" />
 
@@ -326,7 +326,7 @@
 
 <item itemtype="Ground" CircId="Ground-1434" mainComp="false" Show_id="false" Show_Val="false" Pos="920,412" rotation="0" hflip="1" vflip="1" label="Ground-1434" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
-<item itemtype="WaveGen" CircId="WaveGen-514" mainComp="false" Show_id="true" Show_Val="false" Pos="-592,-608" rotation="0" hflip="1" vflip="1" label="Exclusive Left IN" idLabPos="-9.67905,-33.5639" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Running="true" Wave_Type="Sine" Freq="3 kHz" Phase="0 _º" Steps="100 _Steps" Duty="50 _%" Always_On="true" Bipolar="false" Floating="false" Semi_Ampli="2 V" Mid_Volt="0 V" />
+<item itemtype="WaveGen" CircId="WaveGen-514" mainComp="false" Show_id="true" Show_Val="false" Pos="-592,-608" rotation="0" hflip="1" vflip="1" label="Exclusive Left IN" idLabPos="-9.67905,-33.5639" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Running="true" Wave_Type="Sine" Freq="3 kHz" Phase="0 _º" Steps="100 _Steps" Duty="50 _%" Always_On="true" Bipolar="false" Floating="false" Semi_Ampli="3 V" Mid_Volt="0 V" />
 
 <item itemtype="TextComponent" CircId="TextComponent-1439" mainComp="false" Show_id="false" Show_Val="false" Pos="-648,-472" rotation="0" hflip="1" vflip="1" label="TextComponent-1439" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _px" Border="1 _px" Color="#ffffdc" Opacity="1" Font="Helvetica [Cronyx]" Font_Color="#000080" Font_Size="10 _px" Fixed_Width="false" Text="Emulated IN&#xa;There are two signals. &#xa;1) Left IN &#x3D exclusive Left IN + Common IN&#xa;2) Right IN&#x3D exclusive Right IN+ Common IN&#xa;&#xa;Maximum Input Voltage is +-10V&#xa;Working Input Voltage is +-5V&#xa;" />
 
@@ -574,8 +574,6 @@
 
 <item itemtype="Node" CircId="Node-1460" mainComp="false" Pos="-100,-604" />
 
-<item itemtype="Node" CircId="Node-1550" mainComp="false" Pos="-528,-16" />
-
 <item itemtype="Node" CircId="Node-1557" mainComp="false" Pos="-432,-12" />
 
 <item itemtype="Node" CircId="Node-1559" mainComp="false" Pos="-420,-4" />
@@ -657,6 +655,8 @@
 <item itemtype="Node" CircId="Node-1613" mainComp="false" Pos="-164,296" />
 
 <item itemtype="Node" CircId="Node-1614" mainComp="false" Pos="-164,236" />
+
+<item itemtype="Node" CircId="Node-1615" mainComp="false" Pos="-504,24" />
 
 <item itemtype="Connector" uid="Connector-93" startpinid="Resistor-9-rPin" endpinid="Node-38-0" pointList="-796,-296,-784,-296,-784,-288" />
 
@@ -1210,15 +1210,7 @@
 
 <item itemtype="Connector" uid="Connector-3642" startpinid="74XX45-172-2" endpinid="Node-1197-0" pointList="-352,-8,-4,-8,-4,60" />
 
-<item itemtype="Connector" uid="Connector-3690" startpinid="Resistor-825-rPin" endpinid="Node-833-2" pointList="-524,24,-504,24,-504,56" />
-
 <item itemtype="Connector" uid="Connector-3692" startpinid="Node-1040-1" endpinid="ADC-998-in0" pointList="520,-428,772,-428,772,-216,8,-216,8,-128,72,-128" />
-
-<item itemtype="Connector" uid="Connector-3694" startpinid="Node-1550-1" endpinid="ADC-170-in0" pointList="-528,-16,-484,-16,-484,-12" />
-
-<item itemtype="Connector" uid="Connector-3695" startpinid="Diode-822-rPin" endpinid="Node-1550-0" pointList="-540,-16,-528,-16" />
-
-<item itemtype="Connector" uid="Connector-3696" startpinid="Node-1550-2" endpinid="Resistor-825-lPin" pointList="-528,-16,-528,4,-568,4,-568,24,-556,24" />
 
 <item itemtype="Connector" uid="Connector-3698" startpinid="ADC-170-out0" endpinid="Node-1557-0" pointList="-436,-12,-432,-12" />
 
@@ -1447,5 +1439,13 @@
 <item itemtype="Connector" uid="Connector-3831" startpinid="BJT-1128-emiter" endpinid="Node-1614-0" pointList="-164,256,-164,236" />
 
 <item itemtype="Connector" uid="Connector-3832" startpinid="Node-1614-2" endpinid="Node-1204-1" pointList="-164,236,-164,136" />
+
+<item itemtype="Connector" uid="Connector-3833" startpinid="Diode-822-rPin" endpinid="Resistor-825-lPin" pointList="-540,-16,-528,-16,-528,4,-568,4,-568,24,-556,24" />
+
+<item itemtype="Connector" uid="Connector-3834" startpinid="Node-1615-1" endpinid="ADC-170-in0" pointList="-504,24,-504,-12,-484,-12" />
+
+<item itemtype="Connector" uid="Connector-3835" startpinid="Resistor-825-rPin" endpinid="Node-1615-0" pointList="-524,24,-504,24" />
+
+<item itemtype="Connector" uid="Connector-3836" startpinid="Node-1615-2" endpinid="Node-833-2" pointList="-504,24,-504,56" />
 
 </circuit>
