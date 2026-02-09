@@ -1,1 +1,1 @@
-Sim1 files should be open with SimulIDE software.
+Sim1 files should be opened with SimulIDE software.
