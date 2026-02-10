@@ -1,0 +1,153 @@
+
+#include "Adafruit_ILI9341.h"
+
+#define LCD_DC 9
+#define LCD_CS 10
+#define LCD_RST 8
+#define LCD_SCLK 13
+#define LCD_MOSI 11
+#define LCD_MISO -1
+
+#define L0 A0
+#define L1 A1
+#define L2 A2
+
+#define R0 A3
+#define R1 A4
+#define R2 A5
+
+#define F0 2
+#define F1 3
+#define F2 4
+
+#define B0 5
+#define B1 6
+#define B2 7
+
+
+Adafruit_ILI9341 lcd= Adafruit_ILI9341(LCD_CS,  LCD_DC,  LCD_RST );
+//Adafruit_ILI9341 lcd = Adafruit_ILI9341(LCD_CS, LCD_DC);
+
+
+void setup(){
+
+
+
+	pinMode(L0,INPUT);
+	pinMode(L1,INPUT);
+	pinMode(L2,INPUT);
+	pinMode(R0,INPUT);
+	pinMode(R1,INPUT);
+	pinMode(R2,INPUT);
+	pinMode(F0,INPUT);
+	pinMode(F1,INPUT);
+	pinMode(F2,INPUT);
+	pinMode(B0,INPUT);
+	pinMode(B1,INPUT);
+	pinMode(B2,INPUT);
+
+	
+		
+		
+	Serial.begin(9600);
+	Serial.println("Helmet for deafts");
+	lcd.begin();
+	delay(30);
+
+	Serial.println("LCD began.");
+	//lcd.fillScreen(ILI9341_BLUE );
+	//yield();
+
+
+
+}
+
+
+uint16_t  left=00;
+uint16_t  right=0;
+uint16_t  forward=0;
+uint16_t  backward=0;
+
+uint16_t pointF=0;
+uint16_t pointB=0;
+uint16_t pointR=0;
+uint16_t pointL=0;
+
+
+void loop(){
+	
+	
+	left=		digitalRead(L0)+digitalRead(L1)*2+digitalRead(L2)*4;
+	right=		digitalRead(R0)+digitalRead(R1)*2+digitalRead(R2)*4;
+	forward=	digitalRead(F0)+digitalRead(F1)*2+digitalRead(F2)*4;
+	backward=	digitalRead(B0)+digitalRead(B1)*2+digitalRead(B2)*4;
+	
+	left= 		7-left;
+	backward= 	7-backward;
+
+	Serial.print("L");
+	Serial.print(left);
+	Serial.print("R");
+	Serial.print(right);
+	Serial.print("F");
+	Serial.print(forward);
+	Serial.print("B");
+	Serial.println(backward);
+	
+	
+	if((!(pointF>82 && pointB>158)) && (!(pointL>211 && pointR>109))){
+		lcd.setCursor(0, 0);
+		lcd.drawPixel(pointF, pointR, ILI9341_BLUE );
+	}
+	if((!(pointF<82 && pointB<158)) && (!(pointL>211 && pointR>109))){
+		lcd.setCursor(0, 0);
+		lcd.drawPixel(pointB, pointR, ILI9341_BLUE );
+	}
+	if((!(pointF>82 && pointB>158)) && (!(pointL<211 && pointR<109))){
+		lcd.setCursor(0, 0);
+		lcd.drawPixel(pointF, pointL, ILI9341_BLUE );
+	}
+	if((!(pointF<82 && pointB<158)) && (!(pointL<211 && pointR<109))){
+		lcd.setCursor(0, 0);
+		lcd.drawPixel(pointB, pointL, ILI9341_BLUE );
+	}
+	
+	
+	
+	pointF=15*forward+7;
+	pointB=15*backward+127;
+	pointR=20*right+10;
+	pointL=20*left+170;
+
+	Serial.print("Points(");
+	Serial.print(pointF);
+	Serial.print(",");
+	Serial.print(pointB);
+	Serial.print(",");
+	Serial.print(pointR);
+	Serial.print(",");
+	Serial.print(pointL);
+	Serial.println(")");
+
+	if( (!(pointF>82 && pointB>158)) && (!(pointL>211 && pointR>109))){
+		lcd.setCursor(0, 0);
+		lcd.drawPixel(pointF, pointR, ILI9341_RED );
+	}
+	if((!(pointF<82 && pointB<158)) && (!(pointL>211 && pointR>109))){
+		lcd.setCursor(0, 0);
+		lcd.drawPixel(pointB, pointR, ILI9341_RED );
+	}
+	if((!(pointF>82 && pointB>158)) && (!(pointL<211 && pointR<109))){
+		lcd.setCursor(0, 0);
+		lcd.drawPixel(pointF, pointL, ILI9341_RED );
+	}
+	if((!(pointF<82 && pointB<158)) && (!(pointL<211 && pointR< 109))){
+		lcd.setCursor(0, 0);
+		lcd.drawPixel(pointB, pointL, ILI9341_RED );
+	}
+	
+	yield();
+			
+	delay(30);
+	
+}
