@@ -4,3 +4,8 @@ This is a simple electronic device for gamers and deaft people. This device allo
 *.sim1 are files from SimulIDE software, a cheap electronic software for arduino and esp32
 
 The output are vibrators around the headphone that indicates where the sounds come from (left or right, and how far)
+
+
+Impkementation example (version2)
+https://youtu.be/nasVKQEpBIY?si=AUGqkkUTUY7APvD9
+
